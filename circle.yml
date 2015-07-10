@@ -1,0 +1,11 @@
+dependencies:
+    pre:
+        - rm -rf ~/.go_workspace/src/github.com/alexsacr
+        - mkdir -p ~/.go_workspace/src/github.com/alexsacr
+        - cp -R ~/linode ~/.go_workspace/src/github.com/alexsacr/linode
+    override:
+        - cd ~/.go_workspace/src/github.com/alexsacr/linode && make setup
+
+test:
+    override:
+        - cd ~/.go_workspace/src/github.com/alexsacr/linode && make
